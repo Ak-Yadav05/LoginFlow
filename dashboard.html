@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style/style.css" />
+  <style>
+    body {
+      flex-direction: column;
+      background-image: url("images/bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .dashboard-container {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+      animation: fadeSlideIn 1s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .dashboard-container h2 {
+      color: #003b99;
+      margin-bottom: 10px;
+      font-size: 2rem;
+      animation: fadeSlideIn 0.8s ease-out forwards;
+    }
+
+    .dashboard-container p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 30px;
+      animation: fadeSlideIn 1s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    .logout-btn {
+      background: crimson;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background: darkred;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .dashboard-container {
+        padding: 25px 20px;
+      }
+
+      .dashboard-container h2 {
+        font-size: 1.6rem;
+      }
+
+      .dashboard-container p {
+        font-size: 0.95rem;
+      }
+
+      .logout-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <h2>Welcome, <span id="user-name">User</span> 👋</h2>
+    <p>You have successfully logged in.</p>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("data"));
+
+    if (user && user.username) {
+      document.getElementById("user-name").textContent = user.username;
+    } else {
+      window.location.href = "login.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("data");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+
+  <!-- Stylesheets and Fonts -->
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Login Form Card -->
+  <div class="glass-card">
+    <form id="login-form" class="form">
+      <h1>Welcome Back</h1>
+      <p>Please log in to your account.</p>
+
+      <!-- Username -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <div class="input">
+          <input type="text" id="username" name="username" placeholder="Enter your username" />
+        </div>
+        <small class="error-message"></small>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input">
+          <input type="password" id="password" name="password" placeholder="Enter your password" />
+          <img src="images/eye-close.svg" alt="toggle visibility" onclick="eyefunc(this)" />
+        </div>
+        <small class="error-message"></small>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn">Log In</button>
+
+      <!-- Link to Sign Up -->
+      <p style="margin-top: 15px; font-size: 0.85rem; color: #4d5056;">
+        Don't have an account?
+        <a href="index.html" style="color: #3c5ef5; text-decoration: underline;">Sign Up</a>
+      </p>
+    </form>
+  </div>
+
+  <!-- Login Success GlowBox -->
+  <div id="login-popup" class="popup-overlay">
+    <div class="popup-box glow">
+      <p>Login Successful!</p>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script/login.js"></script>
+</body>
+
+</html>

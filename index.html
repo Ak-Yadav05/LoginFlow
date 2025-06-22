@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+
+  <!-- Stylesheets and Fonts -->
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Sign Up Form Card -->
+  <div class="glass-card">
+    <form id="signup-form" class="form">
+      <h1>Create Account</h1>
+      <p>Please fill in the details below to sign up.</p>
+
+      <!-- Username -->
+      <div class="form-group">
+        <label for="username">Username</label>
+        <div class="input">
+          <input type="text" id="username" name="username" placeholder="Enter your username" />
+        </div>
+        <small class="error-message"></small>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input">
+          <input type="password" id="password" name="password" placeholder="Enter your password" />
+          <img src="images/eye-close.svg" alt="toggle visibility" onclick="eyefunc(this)" />
+        </div>
+        <small class="error-message"></small>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <div class="input">
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" />
+          <img src="images/eye-close.svg" alt="toggle visibility" onclick="eyefunc(this)" />
+        </div>
+        <small class="error-message"></small>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn">Sign Up</button>
+
+      <!-- Link to Login -->
+      <p style="margin-top: 15px; font-size: 0.85rem; color: #4d5056;">
+        Already have an account?
+        <a href="login.html" style="color: #3c5ef5; text-decoration: underline;">Log In</a>
+      </p>
+    </form>
+  </div>
+
+  <!-- Success Popup -->
+  <div id="success-popup" class="popup-overlay">
+    <div class="popup-box">
+      <img src="images/tick.png" alt="success" />
+      <p>Signup Successful!</p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script/signup.js"></script>
+</body>
+
+</html>
