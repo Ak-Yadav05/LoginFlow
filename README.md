@@ -1,5 +1,5 @@
 
-# 🔐 Auth UI: Signup, Login & Dashboard with LocalStorage
+# 🔐 LoginFlow: Signup, Login & Dashboard with LocalStorage
 
 This is a **responsive authentication UI** project built using **HTML, CSS, and JavaScript**, featuring:
 
